@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse_engineering</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- Theme Selector -->
+    <div class="theme-switcher">
+        <img src="../assets/icons/palette.svg" alt="Theme Switcher" id="theme-icon">
+        <select id="theme-selector">
+            <option value="tomorrow" selected>Tomorrow Night Blue</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="slate">Slate</option>
+        </select>
+    </div>
+    <div class="container">
+        <!--Menu Icon -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="../assets/icons/menu.svg" alt="Menu Icon">
+        </div>
+
+
+        <!-- Topics Section -->
+        <div class="left-column" id="left-column">
+            <div class="home-button">
+                <a href="../index.html" title="Go to Home">
+                    <img src="../assets/icons/home.ico" alt="Home" class="home-icon">
+                </a>
+            </div>
+
+            <ul class="topics-list">
+                <ul class="topics-list">
+                    <li><a href="../intro/">0. Introduction </a></li>
+                    <li><a href="../Reconnaissance/">1. Reconnaissance Phase</a></li>
+                    <li><a href="../Scanning/">2. Scanning Phase</a></li>
+                    <li><a href="../Gaining_Access/">3. Gaining Access Phase</a></li>
+                    <li><a href="../Maintaining_Access/">4. Maintaining Access</a></li>
+                    <li><a href="../Clearing_Tracks/">5. Clearing Tracks</a></li>
+                    <li><a href="../Analysis_Reporting/">6. Analysis and Reporting</a></li>
+                    <li><a href="../AI_Tools/">7. AI in Cyber Securiy</a></li>
+                    <li><a href="../Bug_Bounty_Hunting/">8. Bug Bounty Hunting</a></li>
+                    <li><a href="../Cryptography/">9. Cryptography</a></li>
+                    <li><a href="../CTFs/">10. Capture The Flag(CTF) Challenges</a></li>
+                    <li><a href="../DFIR/">11. Digital Forensics &amp; Incident Response</a></li>
+                    <li><a href="../Malware/">12. Malware Analysis</a></li>
+                    <li><a href="../Post_Exploitation/">13. Post Exploitation Phase</a></li>
+                </ul>
+        </div>
+
+        <!-- Book Content Section -->
+        <div class="right-column" id="right-column">
+            <div class="page" id="book-page">
+                <div class="book-content" id="book-content">
+                    <h2>Reverse Engineering</h2>
+                    <p>Reverse engineering is the process of dismantling an object or system to see how it works.</p>
+
+
+                    <h3>Reverse Engineering Challenges</h3>
+                    <ul>
+                        <li><a href="https://crackmes.one/" target="_blank" rel="noopener noreferrer">Crackmes</a></li>
+                        <li><a href="http://reversing.kr/index.php" target="_blank" rel="noopener noreferrer">Reverseing
+                                Kr</a></li>
+                    </ul>
+
+                    <h3>Reasons for learning Reverse Engineering</h3>
+                    <ul>
+                        <li>Malware analysis.</li>
+                        <li>Vulnerability analysis.</li>
+                        <li>Software interoperability.</li>
+                        <li>To create compatible software or hardware.</li>
+                        <li>To create a key generator or bypass certification.</li>
+                    </ul>
+
+
+                    <h3>Portable Executable(PE) File</h3>
+                    <p>PE File examples</p>
+                    <ul>
+                        <li>Executables (exe)</li>
+                        <li>Dynamic Libraries</li>
+                        <li>Drivers -Sys</li>
+                    </ul>
+
+
+                    <!-------- Disassbeling -------------->
+                    <h2>Diassembling</h2>
+                    <p>Is analyzing machine code to understand the program's functionality & structure.
+                        Involves reversing an executable (.exe)</p>
+
+                    <h3>Disassemblers</h3>
+                    <ul>
+                        <li><a href="https://hex-rays.com/ida-free" target="_blank"
+                                rel="noopener noreferrer">Interactive Disassembler (IDA)</a></li>
+                        <li><a href="https://binary.ninja" target="_blank" rel="noopener noreferrer">Binary Ninja</a>
+                        </li>
+                    </ul>
+
+
+
+
+                    <!------------Decompiling ------------->
+
+
+                    <h2>Decompiling</h2>
+                    <p>Decompilers are tools that convert binary code back into a higher-level programming language.</p>
+
+                    <h3>Decompilers</h3>
+
+                    <ul>
+                        <li><a href="https://ghidra-sre.org" target="_blank" rel="noopener noreferrer">Ghidra</a></li>
+                        <li><a href="https://binary.ninja" target="_blank" rel="noopener noreferrer">Binary Ninja</a>
+                        </li>
+                    </ul>
+
+
+
+
+                    <!--------Debbugging ----------->
+                    <h2>Debugging</h2>
+                    <p>Using tools to step through code, examine variables and understand program flow.</p>
+
+                    <h3>Debuggers</h3>
+                    <ul>
+                        <li><a href="https://sourceware.org/gdb/" target="_blank" rel="noopener noreferrer">GDB GNU
+                                Debugger</a></li>
+                        <li><a href="https://x64dbg.com/" target="_blank" rel="noopener noreferrer">x64dbg</a></li>
+                    </ul>
+
+
+                    <!---- Binary Analysis ----------------->
+                    <h2>Binary Analysis</h2>
+                    <p>Examining binary files to identify patterns, relationships & potential vulnerabilities.</p>
+
+                    <h3>Binary Analysis Tools</h3>
+                    <ul>
+                        <li><a href="https://binary.ninja/" target="_blank" rel="noopener noreferrer">Binary Ninja</a>
+                        </li>
+                        <li><a href="https://malcat.fr/" target="_blank" rel="noopener noreferrer">malcat</a></li>
+                    </ul>
+
+
+
+
+                    <!---------------------Malware Analysis ---------------->
+                    <h2>Malware Analysis</h2>
+
+
+
+                    <!----------------External Resources ----------------->
+
+                    <h2>External Resources</h2>
+                    <h3>Books</h3>
+                    <ul>
+                        <li>"An Introduction To Reverse Engineering for Beginners" by Yurichev, Dennis</li>
+                        <li>The IDA Pro book by Chris Eagle</li>
+                        <li>The Ghidra book by Chris Eagle & Kara Nance</li>
+                    </ul>
+
+                    <h3>Videos</h3>
+                    <ul>
+                        <li><a href="https://www.youtube.com/@jstrosch" target="_blank" rel="noopener noreferrer">Dr
+                                Josh Stroschein Youtube</a></li>
+                    </ul>
+
+
+                    <h3>Websites</h3>
+
+                    <ul>
+                        <li><a href="https://azeria-labs.com" target="_blank" rel="noopener noreferrer">Azeria Labs</a>
+                        </li>
+                        <li><a href="https://docs.hex-rays.com" target="_blank" rel="noopener noreferrer">Hex-Rays
+                                Documentation</a></li>
+                        <li><a href="https://rada.re/n/" target="_blank" rel="noopener noreferrer">Radare2</a></li>
+                        <li><a href="https://shell-storm.org/" target="_blank" rel="noopener noreferrer">Shell Storm</a>
+                        </li>
+                    </ul>
+
+
+
+
+                    <!-----------Bottom Navigation ----------------->
+                    <div class="book-navigation">
+                        <button class="prev-page" data-prev-page="../Post_Exploitation/">
+                            <img src="../assets/icons/previous_page.svg" alt="Previous" class="icon"> previous
+                        </button>
+                        <button class="top-page"
+                            onclick="document.getElementById('right-column').scrollTo({ top: 0, behavior: 'smooth' });">
+                            <img src="../assets/icons/back-to-top.svg" alt="Top" class="icon"> Top
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        //Hide menu on clicking outside the left-column
+        const leftColumn = document.getElementById('left-column');
+        const rightColumn = document.getElementById('right-column');
+
+        function toggleMenu() {
+            leftColumn.classList.toggle('active');
+        }
+
+        rightColumn.addEventListener('click', () => {
+            // Only hide if screen is mobile size and menu is open
+            if (window.innerWidth <= 768 && leftColumn.classList.contains('active')) {
+                leftColumn.classList.remove('active');
+            }
+        });
+    </script>
+
+    <script>
+        const bookPage = document.getElementById("book-page");
+        const bookContent = document.getElementById("book-content");
+
+        function loadPage(targetPage, direction) {
+            const flipClass = direction === 'next' ? 'flip-forward' : 'flip-backward';
+
+            bookPage.classList.add(flipClass);
+
+            setTimeout(() => {
+                fetch(targetPage)
+                    .then(response => response.text())
+                    .then(data => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(data, 'text/html');
+                        const newContent = doc.getElementById("book-content").innerHTML;
+
+                        bookContent.innerHTML = newContent;
+                        bookPage.classList.remove(flipClass);
+                    });
+            }, 600); // wait for animation
+        }
+
+        document.querySelector(".next-page").addEventListener("click", function () {
+            loadPage(this.dataset.nextPage, 'next');
+        });
+
+        document.querySelector(".prev-page").addEventListener("click", function () {
+            loadPage(this.dataset.prevPage, 'prev');
+        });
+    </script>
+
+    <script src="../assets/js/themes.js"></script>
+
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

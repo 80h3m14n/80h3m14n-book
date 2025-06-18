@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture The Flag Challenges</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- Theme Selector -->
+    <div class="theme-switcher">
+        <img src="../assets/icons/palette.svg" alt="Theme Switcher" id="theme-icon">
+        <select id="theme-selector">
+            <option value="tomorrow" selected>Tomorrow Night Blue</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="slate">Slate</option>
+        </select>
+    </div>
+    <div class="container">
+        <!--Menu Icon -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="../assets/icons/menu.svg" alt="Menu Icon">
+        </div>
+        <!-- Topics Section -->
+        <div class="left-column" id="left-column">
+            <div class="home-button">
+                <a href="../index.html" title="Go to Home">
+                    <img src="../assets/icons/home.ico" alt="Home" class="home-icon">
+                </a>
+            </div>
+
+            <ul class="topics-list">
+                <li><a href="../intro/">0. Introduction </a></li>
+                <li><a href="../Reconnaissance/">1. Reconnaissance Phase</a></li>
+                <li><a href="../Scanning/">2. Scanning Phase</a></li>
+                <li><a href="../Gaining_Access/">3. Gaining Access Phase</a></li>
+                <li><a href="../Maintaining_Access/">4. Maintaining Access</a></li>
+                <li><a href="../Clearing_Tracks/">5. Clearing Tracks</a></li>
+                <li><a href="../Analysis_Reporting/">6. Analysis and Reporting</a></li>
+                <li><a href="../AI_Tools/">7. AI in Cyber Securiy</a></li>
+                <li><a href="../Bug_Bounty_Hunting/">8. Bug Bounty Hunting</a></li>
+                <li><a href="../Cryptography/">9. Cryptography</a></li>
+                <li><a href="../DFIR/">11. Digital Forensics &amp; Incident Response</a></li>
+                <li><a href="../Malware/">12. Malware Analysis</a></li>
+                <li><a href="../Post_Exploitation/">13. Post Exploitation Phase</a></li>
+                <li><a href="../Reverse_Engineering/">14. Reverse Engineering</a></li>
+            </ul>
+        </div>
+
+        <!-- Book Content Section -->
+        <div class="right-column" id="right-column">
+            <div class="page" id="book-page">
+                <div class="book-content" id="book-content">
+                    <h2>Capture The Flag(CTF) Challenges</h2>
+
+
+                    <p>CTFs are texts or strings that are purposefully hidden.</p>
+                    <p>📌Find your sweet spot (challenges that are hard to you at the moment
+                        but not too demanding/arduous)</p>
+
+
+                    <h2>CTF Challenges Platforms</h2>
+                    <p>📌To be better in CTF, build a team and each member to specialize in</p>
+                    <ul>
+                        <li><a href="https://ctf101.org" target="_blank" rel="noopener noreferrer">CTF101</a></li>
+                        <li><a href="https://ctf365.com" target="_blank" rel="noopener noreferrer">CTF365</a></li>
+                        <li><a href="http://ctf.hacker101.com" target="_blank" rel="noopener noreferrer">Hacker101</a>
+                        </li>
+                        <li><a href="https://ctftime.com" target="_blank" rel="noopener noreferrer">CTF Time</a></li>
+                        <li><a href="https://echoctf.com" target="_blank" rel="noopener noreferrer">EchoCTF</a></li>
+                        <li><a href="https://hackthebox.com" target="_blank" rel="noopener noreferrer">Hack the box</a>
+                        </li>
+                        <li><a href="https://hackthissite.org" target="_blank" rel="noopener noreferrer">Hack this
+                                site</a></li>
+                        <li><a href="https://hackasat.com" target="_blank" rel="noopener noreferrer">Hack A Sat</a></li>
+                        <li><a href="https://overthewire.org" target="_blank" rel="noopener noreferrer">Over the
+                                wire</a></li>
+                        <li><a href="play.picoctf.org" target="_blank" rel="noopener noreferrer">Pico CTF</a></li>
+                        <li><a href="https://ringzer0ctf.com" target="_blank" rel="noopener noreferrer">Ringzer0CTF</a>
+                        </li>
+                        <li><a href="https://root-Me.org" target="_blank" rel="noopener noreferrer">ROot Me</a></li>
+                        <li><a href="https://tryhackMe.com" target="_blank" rel="noopener noreferrer">Try Hack Me</a>
+                        </li>
+                    </ul>
+
+                    <h2>Smart-Contract based CTFs</h2>
+                    <ul>
+                        <li><a href="https://www.damnvulnerabledefi.xyz" target="_blank" rel="noopener noreferrer">Damn
+                                Vulnerable DeFi</a></li>
+                        <li><a href="https://ethernaut.openzeppelin.com" target="_blank"
+                                rel="noopener noreferrer">OpenZeppelin</a></li>
+                    </ul>
+
+                    <h2>War Games Platforms</h2>
+                    <ul>
+                        <li><a href="https://overthewire.org" target="_blank" rel="noopener noreferrer">Over The
+                                Wire</a></li>
+                        <li><a href="https://www.smashthestack.org/" target="_blank" rel="noopener noreferrer">Smash The
+                                stack</a></li>
+                    </ul>
+
+
+
+                    <!---------------Essential Tools -------------------->
+                    <h2>Software tools for CTF.</h2>
+                    <h3>Virtualization</h3>
+                    <ul>
+                        <li>VMware</li>
+                        <li>Virtual Box</li>
+                    </ul>
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Pwntools</li>
+                    </ul>
+                    <hr />
+
+
+                    <!----------Types of CTFs --------------->
+                    <h2>Types of CTFs</h2>
+                    <h3>1. Jeopardy</h3>
+                    <ul>
+                        <li>Reverse</li>
+                        <li>Pwn</li>
+                        <li>Crypto</li>
+                        <li>Web</li>
+                        <li>Mise</li>
+                    </ul>
+
+                    <h3>2. Attack &amp; defence</h3>
+                    <h3>3. Vulnerability discovery</h3>
+                    <ul>
+                        <li>Source code Auditing</li>
+                        <li>Binary auditing</li>
+                    </ul>
+
+                    <h3>4. Exploit creation</h3>
+
+
+
+                    <h2>Categories of CTFs.</h2>
+
+
+
+                    <!------------categories of CTF callenges ------------>
+                    <ul>
+                        <li><a href="#General_skills"></a>1. General skills</li>
+                        <li><a href="#Cryptography"></a>2. Cryptography</li>
+                        <li><a href="#Forensics"></a>3. Forensics</li>
+                        <li><a href="#Web_exploitation"></a>4. Web exploitation</li>
+                        <li><a href="#Reverse_engineering"></a>5. Reverse engineering</li>
+                        <li><a href="#Uncategorized_Miscellaneous"></a>6. Uncategorized/Miscellaneous</li>
+                        <li><a href="#Binary_exploitation"></a>7. Binary exploitation</li>
+                    </ul>
+
+
+
+
+
+                    <!-------------General Skills ------------------->
+                    <h2 id="General_skills">General Skills</h2>
+                    <ul>
+                        <li>Scripting</li>
+                        <li>Operating System Specific</li>
+                        <li>System Administration</li>
+                    </ul>
+
+
+                    <!------------------ Cryptography --------------->
+                    <h2 id="Cryptography">Cryptography</h2>
+
+                    <p>Cryptography is the practice and study of techniques for securing communication and information
+                        from adversaries.</p>
+
+                    <h3>Uses of Cryptography</h3>
+                    <ul>
+                        <li>Hiding malicious code</li>
+                        <li>Hiding malicious communication</li>
+                        <li>Key exchange algorithms</li>
+                        <li>Secure copyrighted software code</li>
+                        <li>Secure web traffic i.e passwords</li>
+                    </ul>
+
+                    <h3>Types of Cryptography</h3>
+                    <ul>
+                        <li>Symmetric Key Cryptography</li>
+                        <li>Asymmetric Key Cryptography</li>
+                        <li>Hash Functions</li>
+                    </ul>
+
+                    <p><a href="../Cryptography/">More info on Cryptography</a></p>
+
+
+                    <!-------------------Forensics ---------->
+
+                    <h2 id="Forensics">Forenscis</h2>
+
+                    <p>📌It's important to note that Forensics in CTFs is not 100% compared to real-world forensics.</p>
+                    <ul>
+                        <li>File</li>
+                        <li>Filesystem</li>
+                        <li>Memory</li>
+                        <li>Network</li>
+                    </ul>
+
+                    <p><a href="../DFIR/">For more info on forensics</a></p>
+
+                    <!-------------------Web Exploitation ---------------------->
+                    <h2 id="Web_exploitation">Web Exploitation</h2>
+                    <p>Web exploitation is the process of exploiting vulnerabilities in web applications to gain
+                        unauthorized
+                        access or perform malicious actions.</p>
+
+                    <ul>
+                        <li>Known exploited vulnerabilities</li>
+                        <li>Programming languages</li>
+                        <li>Tech stacks</li>
+                    </ul>
+
+                    <h3>Web Exploitation Tools</h3>
+                    <ul>
+                        <li><a href="https://portswigger.net/burp/communitydownload" target="_blank"
+                                rel="noopener noreferrer">Burp suite</a></li>
+                    </ul>
+
+
+
+
+                    <!-----------------Uncategorized/Miscellaneous ------------>
+                    <h2 id="Uncategorized_Miscellaneous">Miscellaneous</h2>
+                    <p>Miscellaneous challenges in CTFs are tasks that do not fit neatly into other predefined
+                        categories. These challenges often test a wide range of skills and creativity.</p>
+
+                    <h3>Examples of Miscellaneous Challenges</h3>
+                    <ul>
+                        <li>Steganography - Hiding information within images, audio, or other files.</li>
+                        <li>Encoding/Decoding - Working with various encoding schemes like Base64, Morse code, or custom
+                            ciphers.</li>
+                        <li>Trivia - Answering cybersecurity-related questions or solving puzzles.</li>
+                        <li>OSINT (Open Source Intelligence) - Gathering publicly available information to solve a
+                            challenge.</li>
+                        <li>Logic Puzzles - Solving riddles or logical problems.</li>
+                    </ul>
+
+                    <h3>Tools for Miscellaneous Challenges</h3>
+                    <ul>
+                        <li><a href="https://gchq.github.io/CyberChef/" target="_blank"
+                                rel="noopener noreferrer">CyberChef</a> - A versatile tool for data analysis and
+                            manipulation.</li>
+                        <li><a href="https://stegonline.georgeom.net/" target="_blank"
+                                rel="noopener noreferrer">StegOnline</a> - A tool for analyzing and extracting hidden
+                            data from images.</li>
+                        <li>Online Decoders - Websites for decoding Base64, ROT13, or other encodings.</li>
+                    </ul>
+
+
+                    <!--------------------Reverse Engineeering ----------------------->
+                    <h2 id="Reverse_engineering">Reverse Engineering</h2>
+
+                    <ul>
+                        <li>Assembly &amp; machine code</li>
+                        <li>C/C++, Rust programming</li>
+                        <li>Disassembly</li>
+                        <li>Debugger</li>
+                        <li>Decompiler</li>
+                    </ul>
+
+                    <p><a href="../Reverse_Engineering/">More info on Reverse Engineering</a></p>
+
+
+                    <!---------------------Binary Exploitaions ---------------->
+                    <h2 id="Binary_exploitation">Binary Exploitaion</h2>
+                    <ul>
+                        <li>Buffers</li>
+                        <li>Calling convection</li>
+                        <li>Format string vulnerabilities</li>
+                        <li>Global offset table(GOT)</li>
+                        <li>Registers</li>
+                        <li>Return oriented programming(ROP)</li>
+                        <li>The heap</li>
+                        <li>The stack</li>
+                    </ul>
+
+                    <hr />
+
+
+
+
+                    <!---------------------Resources ------------------------------------->
+                    <h1>External Resources.</h1>
+                    <h3>Books</h3>
+                    <ul>
+                        <li>Gray Hat hacking</li>
+                    </ul>
+
+                    <h3>Github repositories</h3>
+                    <ul>
+                        <li><a href="https://github.com/apsdehal/awesome-ctf" target="_blank"
+                                rel="noopener noreferrer">Awesome-CTF by
+                                Apsdehal</a></li>
+                    </ul>
+                    <h3>Youtube Channels</h3>
+
+                    <ul>
+                        <li><a href="https://www.youtube.com/@Hacker101" target="_blank"
+                                rel="noopener noreferrer">Hacker101</a></li>
+                        <li><a href="https://www.youtube.com/@LiveOverflow" target="_blank"
+                                rel="noopener noreferrer">LiveOverflow</a></li>
+                        <li><a href="https://www.youtube.com/@TheCyberMentor" target="_blank"
+                                rel="noopener noreferrer">The Cyber Mentor</a></li>
+                        <li><a href="https://www.youtube.com/@IppSec" target="_blank"
+                                rel="noopener noreferrer">IppSec</a></li>
+
+                        <h3>Websites</h3>
+                        <ul>
+                            <li><a href="https://ctflearn.com" target="_blank" rel="noopener noreferrer">CTF Learn</a>
+                            </li>
+                            <li><a href="https://forensics.wiki" target="_blank" rel="noopener noreferrer">Forenscis
+                                    wiki</a></li>
+                        </ul>
+
+
+
+
+                        <!-----------Bottom Navigation pane --------------->
+                        <div class="book-navigation">
+                            <button class="prev-page" data-prev-page="../Cryptography/">
+                                <img src="../assets/icons/previous_page.svg" alt="Previous" class="icon"> previous
+                            </button>
+                            <button class="top-page"
+                                onclick="document.getElementById('right-column').scrollTo({ top: 0, behavior: 'smooth' });">
+                                <img src="../assets/icons/back-to-top.svg" alt="Top" class="icon"> Top
+                            </button>
+                            <button class="next-page" data-next-page="../DFIR/">
+                                Next <img src="../assets/icons/next_page.svg" alt="Next" class="icon">
+                            </button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //Hide menu on clicking outside the left-column
+        const leftColumn = document.getElementById('left-column');
+        const rightColumn = document.getElementById('right-column');
+
+        function toggleMenu() {
+            leftColumn.classList.toggle('active');
+        }
+
+        rightColumn.addEventListener('click', () => {
+            // Only hide if screen is mobile size and menu is open
+            if (window.innerWidth <= 768 && leftColumn.classList.contains('active')) {
+                leftColumn.classList.remove('active');
+            }
+        });
+    </script>
+
+    <script>
+        const bookPage = document.getElementById("book-page");
+        const bookContent = document.getElementById("book-content");
+
+        function loadPage(targetPage, direction) {
+            const flipClass = direction === 'next' ? 'flip-forward' : 'flip-backward';
+
+            bookPage.classList.add(flipClass);
+
+            setTimeout(() => {
+                fetch(targetPage)
+                    .then(response => response.text())
+                    .then(data => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(data, 'text/html');
+                        const newContent = doc.getElementById("book-content").innerHTML;
+
+                        bookContent.innerHTML = newContent;
+                        bookPage.classList.remove(flipClass);
+                    });
+            }, 600); // wait for animation
+        }
+
+        document.querySelector(".next-page").addEventListener("click", function () {
+            loadPage(this.dataset.nextPage, 'next');
+        });
+
+        document.querySelector(".prev-page").addEventListener("click", function () {
+            loadPage(this.dataset.prevPage, 'prev');
+        });
+    </script>
+
+    <script src="../assets/js/themes.js"></script>
+
+
+
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

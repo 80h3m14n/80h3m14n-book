@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Bounty Hunting</title>
+    <!-- Prism CSS theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <!-- Prism core + language support -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Theme Selector -->
+        <div class="theme-switcher">
+            <img src="../assets/icons/palette.svg" alt="Theme Switcher" id="theme-icon">
+            <select id="theme-selector">
+                <option value="tomorrow" selected>Tomorrow Night Blue</option>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="slate">Slate</option>
+            </select>
+        </div>
+
+        <!--Menu Icon -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="../assets/icons/menu.svg" alt="Menu Icon">
+        </div>
+        <!-- Topics Section -->
+        <div class="left-column" id="left-column">
+            <div class="home-button">
+                <a href="../index.html" title="Go to Home">
+                    <img src="../assets/icons/home.ico" alt="Home" class="home-icon">
+                </a>
+            </div>
+
+            <ul class="topics-list">
+                <li><a href="../intro/">0. Introduction </a></li>
+                <li><a href="../Reconnaissance/">1. Reconnaissance Phase</a></li>
+                <li><a href="../Scanning/">2. Scanning Phase</a></li>
+                <li><a href="../Gaining_Access/">3. Gaining Access Phase</a></li>
+                <li><a href="./Maintaining_Access/">4. Maintaining Access</a></li>
+                <li><a href="../Clearing_Tracks/">5. Clearing Tracks</a></li>
+                <li><a href="../Analysis_Reporting/">6. Analysis and Reporting</a></li>
+                <li><a href="../AI_Tools/">7. AI in Cyber Securiy</a></li>
+                <li><a href="../Cryptography/">9. Cryptography</a></li>
+                <li><a href="../CTFs/">10. Capture The Flag(CTF) Challenges</a></li>
+                <li><a href="../DFIR/">11. Digital Forensics &amp; Incident Response</a></li>
+                <li><a href="../Malware/">12. Malware Analysis</a></li>
+                <li><a href="../Post_Exploitation/">13. Post Exploitation Phase</a></li>
+                <li><a href="../Reverse_Engineering/">14. Reverse Engineering</a></li>
+            </ul>
+        </div>
+
+        <!-- Book Content Section -->
+        <div class="right-column" id="right-column">
+            <div class="page" id="book-page">
+                <div class="book-content" id="book-content">
+                    <h2>Bug Bounty Hunting</h2>
+
+                    <p>Bug bounty hunting is the practice of finding and reporting security vulnerabilities
+                        in software, websites, and applications in exchange for rewards
+                        (bounties).</p>
+                    <h2 id="prerequisites">Prerequisites</h2>
+                    <ul>
+                        <li>Basic programming</li>
+                        <li>Computer networking</li>
+                        <li>Computational Basics</li>
+                        <li>Cloud computing knowledge </li>
+                        <li>Infrastructure exploitation skills</li>
+                        <li>Operating systems: Linux</li>
+                        <li>Web Technologies</li>
+                    </ul>
+                    <h2 id="platformsforums.">Bug Bounty Platforms/Forums.</h2>
+                    <p>These are platforms where you can report bugs.</p>
+
+                    <h3> 1. Open for signup </h3>
+                    <ul>
+                        <li><a href="https://bountysource.com" target="_blank" rel="noopener noreferrer">Bountysource
+                        </li>
+                        <li><a href="https://bugbounty.jp" target="_blank" rel="noopener noreferrer">Bugbounty JP</a>
+                        </li>
+                        <li><a href="https://bugcrowd.com" target="_blank" rel="noopener noreferrer">Bug crowd</a></li>
+                        <li><a href="https://bughunters.google.com" target="_blank" rel="noopener noreferrer">Google Bug
+                                Hunters</a></li>
+                        <li><a href="https://cesppa.com/" target="_blank" rel="noopener noreferrer">Cesppa</a></li>
+                        <li><a href="https://cobalt.io" target="_blank" rel="noopener noreferrer">Cobalt</a></li>
+                        <li><a href="https://coderbounty.com" target="_blank" rel="noopener noreferrer">coderbounty</a>
+                        </li>
+                        <li><a href="https://cs.detectify.com" target="_blank" rel="noopener noreferrer">Detectify</a>
+                        </li>
+                        <li><a href="https://freedomsponsers.org" target="_blank" rel="noopener noreferrer">Freedom
+                                Sponsers</a></li>
+                        <li><a href="https://hackenproof.com" target="_blank" rel="noopener noreferrer">Hackerproof</a>
+                        </li>
+                        <li><a href="https://hackerhive.io" target="_blank" rel="noopener noreferrer">Hackerhive</a>
+                        </li>
+                        <li><a href="https:/HackerOne.com" target="_blank" rel="noopener noreferrer">HackerOne</a></li>
+                        <li><a href="https://integriti.com" target="_blank" rel="noopener noreferrer">Integriti</a></li>
+                        <li><a href="https://safehats.com" target="_blank" rel="noopener noreferrer">Safehats</a></li>
+                        <li><a href="https://synack.com" target="_blank" rel="noopener noreferrer">Sysnack</a></li>
+                        <li><a href="https://yeswehack.com" target="_blank" rel="noopener noreferrer">Yeswehack</a></li>
+                    </ul>
+                    </p>
+
+                    <h3>2. Invite-based platforms</h3>
+                    <ul>
+                        <li><a href="https://antihack.me" target="_blank" rel="noopener noreferrer">Antihack</a></li>
+                        <li><a href="https://bugbountyzone.com/" target="_blank" rel="noopener noreferrer">Bug bounty
+                                Zone</a></li>
+                        <li><a href="https://cobalt.io/" target="_blank" rel="noopener noreferrer">Cobalt</a></li>
+                        <li><a href="https://synack.com/red-team/" target="_blank" rel="noopener noreferrer">Synack</a>
+                        </li>
+                        <li><a href="https://vulnscope.com/" target="_blank" rel="noopener noreferrer">Vulnscope</a>
+                        </li>
+                        <li><a href="https://yogosha.com/" target="_blank" rel="noopener noreferrer">Yogosha</a></li>
+                        <li><a href="https://zerocopter.com/" target="_blank" rel="noopener noreferrer">Zerocopter</a>
+                        </li>
+                    </ul>
+                    <hr />
+
+
+                    <h3>Vulnerability Disclosure Programs(VDP)</h3>
+                    <p>A VDP is a structured framework that allows organizations to receive, manage, and address
+                        security vulnerabilities
+                        reported by external parties, including security researchers and ethical hackers</p>
+                    <p>In simple terms: These are platforms where you can report bugs for free without being paid</p>
+                    <ul>
+                        <li><a href="https://www.bugcrowd.com/glossary/vulnerability-disclosure-program-vdp/"
+                                target="_blank" rel="noopener noreferrer">Bug Crowd VDP</a></li>
+                        <li><a href="https://www.hackerone.com/product/response-vulnerability-disclosure-program"
+                                target="_blank" rel="noopener noreferrer">Hackerone VDP</a></li>
+                        <li><a href="https://qwilr.com/vulnerability-disclosure/" target="_blank"
+                                rel="noopener noreferrer">Qwilr VDP</a></li>
+                        <li><a href="https://www.dsci.in/content/vulnerability-disclosure-program" target="_blank"
+                                rel="noopener noreferrer">DSCI VDP</a></li>
+                    </ul>
+
+
+                    <!-------------Phases of Bug Bounty Hunting ------------->
+                    <h1>Phases of Bug Bounty Hunting.</h1>
+                    <ol type="1">
+                        <li>SOW &amp; MSA signed</li>
+                    </ol>
+                    <p><br></p>
+                    <ol start="2" type="1">
+                        <li>Rules of Engagement(ROE) signed </li>
+                    </ol>
+                    <ul>
+                        <li>Penetration team</li>
+                        <li>Demmo corp</li>
+                        <li>Client Point of Contact(CPOTC)</li>
+                        <li>Test dates</li>
+                        <li>Status updates(daily start &amp; stop time)</li>
+                        <li>Test boundaries - domain</li>
+                        <li>Out of scope - DDoS, Phishing - explicitly oof limit</li>
+                    </ul>
+                    <p><br></p>
+                    <ol start="3" type="1">
+                        <li>Scope verified</li>
+                    </ol>
+                    <ul>
+                        <li>Allowed range of assets</li>
+                        <li>Legal &amp; ethical boundaries</li>
+                        <li>Practical reasons</li>
+                        <li>Fairness</li>
+                    </ul>
+                    <p><br></p>
+                    <ol start="4" type="1">
+                        <li>Penetration testing occurs</li>
+                    </ol>
+                    <ul>
+                        <li>Reconnaissance</li>
+                        <li>Identify Technologies</li>
+                        <li>Enumerations</li>
+                        <li>Vulnerability scanning</li>
+                        <li>Exploitaion testing</li>
+                        <li>Classification and reporting</li>
+                    </ul>
+                    <p><br></p>
+                    <ol start="5" type="1">
+                        <li>Report written &amp; delivered</li>
+                    </ol>
+                    <p><br></p>
+                    <ol start="6" type="1">
+                        <li>Client Debrief </li>
+                    </ol>
+                    <p><br></p>
+                    <ol start="7" type="1">
+                        <li>Retesting(If necessary)</li>
+                    </ol>
+                    <hr />
+
+                    <!------------Penetration Testing Lab Set-up ---------------->
+                    <h2>Penetration testing lab set-up.</h2>
+                    <p>📌Master the methodology not the tool, Tools are invented &amp; overtime they get deprecated,</p>
+                    <h3>Essential Tools.</h3>
+                    <ul>
+                        <li>Virtual Machine</li>
+                        <li>Ubuntu OS</li>
+                        <li>Web server</li>
+                        <li>VPS provider</li>
+                        <li>Docker</li>
+                        <li>Burp suite framework</li>
+                        <li>SQL map</li>
+                        <li>BeEF</li>
+                    </ul>
+
+                    <h3>Exploitation &amp; Post-Exploitation</h3>
+                    <ul>
+                        <li>patator Brute-force attack tool</li>
+                        <li>wfuzz Web application fuzzing</li>
+                        <li>FFUF</li>
+                        <li>changeme Default credential scanner</li>
+                        <li>PHPGGC PHP gadget chain exploitation</li>
+                    </ul>
+                    <h3>SSRF, LFI, XXE &amp; JWT Attacks</h3>
+                    <ul>
+                        <li>LFISuit LFI (Local File Inclusion) scanner</li>
+                        <li>ssrfDetector Detects SSRF vulnerabilities</li>
+                        <li>XXE Injector XXE (XML External Entity) attack tool</li>
+                        <li>oxml_xxe Detects XXE vulnerabilities in XML files</li>
+                    </ul>
+                    <h3>Automated Pentesting Frameworks</h3>
+                    <ul>
+                        <li>Sn1per</li>
+                        <li>Sandcastle</li>
+                    </ul>
+                    <hr />
+
+
+
+                    <!--------------Known Exploited Vulnerabilities---------------->
+                    <h1>Known Exploited Vulnerabilities.</h1>
+                    <h2 id="owasp-top-10">OWASP TOP 10</h2>
+                    <p><a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener noreferrer">OWASP
+                            Top 10</a></p>
+                    <ol type="1">
+                        <li>Injection</li>
+                        <li>Broken Access control</li>
+                        <li>Security misconfigurations</li>
+                        <li>Insecure designs</li>
+                        <li>Cryptographic failures</li>
+                        <li>Outdated components</li>
+                        <li>Authentication failures</li>
+                        <li>Server side request forgery(SSRF)</li>
+                        <li>Security logging</li>
+                    </ol>
+                    <p>📌OWASP top 10 are updated yearly.</p>
+
+
+
+                    <h2>Common Weakness Enumuration(CWE) Top 25</h2>
+                    <ul>
+                        <li><a href="https://nvd.nist.gov" target="_blank" rel="noopener noreferrer">NIST</a></li>
+                        <li><a href="https://cwe.mitre.org" target="_blank" rel="noopener noreferrer">MITRE CVE</a></li>
+                        <li><a href="https://exploit-db.com" target="_blank" rel="noopener noreferrer">Google Hacking
+                                Database - Exploit-db</a></li>
+                    </ul>
+                    <ol type="1">
+                        <li>Software development</li>
+                    </ol>
+                    <ul>
+                        <li>API</li>
+                        <li>Authentication errors</li>
+                        <li>Handler errors</li>
+                        <li>Permission issues </li>
+                    </ul>
+                    <ol start="2" type="1">
+                        <li>Hardware design</li>
+                    </ol>
+                    <ul>
+                        <li>Memory &amp; storage issues</li>
+                        <li>Intergration issues</li>
+                        <li>Power, Clock, Thermal</li>
+                        <li>Physical access issues</li>
+                    </ul>
+
+                    <h2>Common Vulnerability &amp; Exposure(CVE).</h2>
+                    <p>Format CVE:Year:ID i.e CVE:2025:226</p>
+                    <ul>
+                        <li><a href="https://cve.mitre.org" target="_blank" rel="noopener noreferrer">Mitre CVE</a></li>
+                        <li><a href="nvd.nist.gov" target="_blank" rel="noopener noreferrer"> NIST National
+                                Vulnerability Database</a></li>
+                        <li><a href="cvedetails.com/" target="_blank" rel="noopener noreferrer">CVE Details</a></li>
+                        <li><a href="https://cve.org" target="_blank" rel="noopener noreferrer">CVE</a></li>
+                        <li><a href="cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank"
+                                rel="noopener noreferrer">CISA Known Exploited
+                                Vulnerabilities Catalogue</a></li>
+                        <li><a href="kb.cert.org/vuls/bypublished/desc/" target="_blank" rel="noopener noreferrer">CERT
+                                Vulnerabilities Notes Database</a></li>
+                        <li><a href="https://vulners.com/cve/" target="_blank" rel="noopener noreferrer">Vulners</a>
+                        </li>
+                    </ul>
+
+                    <h3>MITRE ATT&amp;CK CVE</h3>
+                    <p>CTID - The Center for threat informed defense is a non profit funded
+                        research and development organization operated by MITRE Engenuity</p>
+                    <p>TTPs - Tactics, Techniques and Procedures.</p>
+                    <hr />
+
+
+                    <!------------------Useful Resources ---------------------->
+                    <h1>External Resources</h1>
+                    <h3>Books &amp; Journals</h3>
+                    <ul>
+                        <li>Bug bounty bootcamp by Vicki Li</li>
+                        <li>Penetration testing by Georgia Weidman</li>
+                        <li>Real world Bug bounty by Peter Yaworski</li>
+                        <li>Web hacking 101 by Peter Yaworski</li>
+                    </ul>
+
+                    <h3>Bug Bounty Writeups</h3>
+                    <ul>
+                        <li><a href="https://pentester.land/writeups" target="_blank"
+                                rel="noopener noreferrer">Pentester</a></li>
+                        <li><a href="https://infosecwriteups.com/" target="_blank" rel="noopener noreferrer">Infosec
+                                Writeups</a></li>
+                    </ul>
+
+                    <h3>Github Repositories</h3>
+                    <ul>
+                        <li><a href="https://github.com/Muhammd/awesome-bug-bounty" target="_blank"
+                                rel="noopener noreferrer">Awesome Bug Bounty by Muhammd</a></li>
+                        <li><a href="https://github.com/djadmin/awesome-bug-bounty" target="_blank"
+                                rel="noopener noreferrer">Awesome Bug Bounty by Djadmin</a></li>
+                    </ul>
+
+
+                    <h3>Videos</h3>
+                    <ul>
+                        <li><a href="https://www.youtube.com/@NahamSec" target="_blank"
+                                rel="noopener noreferrer">Nahamsec Youtube</a></li>
+                        <li><a href="https://www.youtube.com/@bughunterlabs" target="_blank"
+                                rel="noopener noreferrer">Bug hunter
+                                labs Youtube</a></li>
+                        <li><a href="https://www.youtube.com/@ryan_phdsec" target="_blank"
+                                rel="noopener noreferrer">Ryan John Youtube</a></li>
+                        <li><a href="https://www.youtube.com/@_JohnHammond" target="_blank"
+                                rel="noopener noreferrer">John Hammond</a></li>
+                    </ul>
+
+                    <h3>Websites</h3>
+                    <ul>
+                        <li><a href="https://lostsec.xyz/" target="_blank" rel="noopener noreferrer">Lotsec</a></li>
+                    </ul>
+
+
+
+                    <!---------------Bottom Navigation --------------->
+
+
+                    <div class="book-navigation">
+                        <button class="prev-page" data-prev-page="../AI_Tools/">
+                            <img src="../assets/icons/previous_page.svg" alt="Previous" class="icon"> previous
+                        </button>
+                        <button class="top-page"
+                            onclick="document.getElementById('right-column').scrollTo({ top: 0, behavior: 'smooth' });">
+                            <img src="../assets/icons/back-to-top.svg" alt="Top" class="icon"> Top
+                        </button>
+                        <button class="next-page" data-next-page="../Cryptography/">
+                            Next <img src="../assets/icons/next_page.svg" alt="Next" class="icon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        //Hide menu on clicking outside the left-column
+        const leftColumn = document.getElementById('left-column');
+        const rightColumn = document.getElementById('right-column');
+
+        function toggleMenu() {
+            leftColumn.classList.toggle('active');
+        }
+
+        rightColumn.addEventListener('click', () => {
+            // Only hide if screen is mobile size and menu is open
+            if (window.innerWidth <= 768 && leftColumn.classList.contains('active')) {
+                leftColumn.classList.remove('active');
+            }
+        });
+    </script>
+
+    <script>
+        const bookPage = document.getElementById("book-page");
+        const bookContent = document.getElementById("book-content");
+
+        function loadPage(targetPage, direction) {
+            const flipClass = direction === 'next' ? 'flip-forward' : 'flip-backward';
+
+            bookPage.classList.add(flipClass);
+
+            setTimeout(() => {
+                fetch(targetPage)
+                    .then(response => response.text())
+                    .then(data => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(data, 'text/html');
+                        const newContent = doc.getElementById("book-content").innerHTML;
+
+                        bookContent.innerHTML = newContent;
+                        bookPage.classList.remove(flipClass);
+                    });
+            }, 600); // wait for animation
+        }
+
+        document.querySelector(".next-page").addEventListener("click", function () {
+            loadPage(this.dataset.nextPage, 'next');
+        });
+
+        document.querySelector(".prev-page").addEventListener("click", function () {
+            loadPage(this.dataset.prevPage, 'prev');
+        });
+    </script>
+
+    <script>
+        function copyCode(btn) {
+            const code = btn.parentElement.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                btn.innerText = "Copied!";
+                setTimeout(() => btn.innerText = "Copy", 1500);
+            });
+        }
+    </script>
+
+    <script src="../assets/js/themes.js"></script>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

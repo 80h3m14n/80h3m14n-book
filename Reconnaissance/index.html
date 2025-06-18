@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconnaissance</title>
+    <!-- Prism CSS theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <!-- Prism core + language support -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+    <!-- Theme Selector -->
+    <div class="theme-switcher">
+        <img src="../assets/icons/palette.svg" alt="Theme Switcher" id="theme-icon">
+        <select id="theme-selector">
+            <option value="tomorrow" selected>Tomorrow Night Blue</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="slate">Slate</option>
+        </select>
+    </div>
+    <div class="container">
+
+
+        <!--Menu Icon -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="../assets/icons/menu.svg" alt="Menu Icon">
+        </div>
+
+        <!-- Topics Section -->
+        <div class="left-column" id="left-column">
+            <div class="home-button">
+                <a href="../index.html" title="Go to Home">
+                    <img src="../assets/icons/home.ico" alt="Home" class="home-icon">
+                </a>
+            </div>
+
+            <ul class="topics-list">
+                <li><a href="../intro/">0. Introduction</a></li>
+                <li><a href="../Scanning/">2. Scanning Phase</a></li>
+                <li><a href="../Gaining_Access/">3. Gaining Access Phase</a></li>
+                <li><a href="../Maintaining_Access/">4. Maintaining Access</a></li>
+                <li><a href="../Clearing_Tracks/">5. Clearing Tracks</a></li>
+                <li><a href="../Analysis_Reporting/">6. Analysis and Reporting</a></li>
+                <li><a href="../AI_Tools/">7. AI in Cyber Securiy</a></li>
+                <li><a href="../Bug_Bounty_Hunting/">8. Bug Bounty Hunting</a></li>
+                <li><a href="../Cryptography/">9Cryptography</a></li>
+                <li><a href="../CTFs/">10. Capture The Flag(CTF)</a></li>
+                <li><a href="../DFIR/">11. Digital Forensics & Incident Response</a></li>
+                <li><a href="../Malware/">12. Malware Analysis</a></li>
+                <li><a href="../Post_Exploitation/">13. Post Exploitation Phase</a></li>
+                <li><a href="../Reverse_Engineering/">14. Reverse Engineering</a></li>
+            </ul>
+        </div>
+
+        <!-- Book Content Section -->
+        <div class="right-column" id="right-column">
+            <div class="page" id="book-page">
+                <div class="book-content" id="book-content">
+                    <p>Information gathering is where you extract as much information as possible about the target.</p>
+                    <h3>Information gathering Techniques/methods</h3>
+                    <ul>
+                        <li><a href="#footprinting"></a>Footprinting</li>
+                        <li><a href="#social-engineering">Social engineering - phishing </a></li>
+                        <li><a href="#enumeration">Enumeration</a></li>
+                        <li><a href="#sniffing">Sniffing (capture stage)</a></li>
+                        <li><a href="#eavesdropping">Eavesdropping</a></li>
+                        <li><a href="#data_breaches"></a>Data breaches info </li>
+                    </ul>
+                    <p>📌 Email address &amp; LinkedIn profile contain almost everything
+                        about your target.</p>
+
+
+                    <h1 id="types-of-reconnaissance">TYpes of reconnaissance</h1>
+                    <h2>1. Active reconnaissance.</h2>
+                    <ul>
+                        <li>Direct interaction with the target to get information.</li>
+                    </ul>
+                    <h3 id="methods">Active Recon Methods</h3>
+                    <ul>
+                        <li>Host enumeration</li>
+                        <li>Network enumeration</li>
+                        <li>User enumeration</li>
+                        <li>Group enumeration</li>
+                        <li>Network share enumeration</li>
+                        <li>Web page enumeration</li>
+                        <li>Application enumeration</li>
+                        <li>Service enumeration</li>
+                        <li>Packet crafting</li>
+                    </ul>
+                    <h3 id="tools">Tools</h3>
+                    <ul>
+                        <li>Maltego-ng</li>
+                        <li>Recon-ng</li>
+                        <li>SpiderFoot</li>
+                        <li>The harvester</li>
+                        <li>SET toolkit</li>
+                        <li>HostileSubBruteforcer</li>
+                        <li>Sublist3r</li>
+                        <li>Amass</li>
+                    </ul>
+
+
+
+                    <h2>2. Passive reconnaissance.</h2>
+                    <ul>
+                        <li>Data collection without any direct engagement with the target.</li>
+                    </ul>
+                    <h3>Passive recon Methods</h3>
+                    <ul>
+                        <li>Domain enumeration</li>
+                        <li>Packet inspection</li>
+                        <li>Open-source intelligence (OSINT)</li>
+                        <li>Eavesdropping</li>
+                    </ul>
+                    <h3>Tools</h3>
+                    <ul>
+                        <li>OSINT Framework</li>
+                        <li>nslookup</li>
+                        <li>Whois</li>
+                        <li>Google dorks</li>
+                        <li>Wayback Machine</li>
+                    </ul>
+                    <p>📌If you don’t see it, doesn’t mean it’s not there.</p>
+                    <hr />
+
+                    <!----------------------Footprinting --------------------------------->
+                    <h1 id="footprinting">1. Footprinting</h1>
+
+                    <h3 id="archived-data">Archived data</h3>
+                    <ul>
+                        <li><a href="https://wayback.archive.org" target="_blank" rel="noopener noreferrer">Wayback
+                                machine</a>Source Code Search </li>
+                        <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">Github</a></li>
+                        <li><a href="https://grep.app" target="_blank" rel="noopener noreferrer">Grep</a></li>
+                    </ul>
+                    <h3 id="devices-software">Devices / Software</h3>
+                    <ul>
+                        <li><a href="https://censys.com" target="_blank" rel="noopener noreferrer">Censys</a></li>
+                        <li><a href="https://downforeveryoneorjustme.com" target="_blank" rel="noopener noreferrer">Down
+                                for Everyone or Just Me</a></li>
+                        <li><a href="https://sec.gov/edgar/search" target="_blank" rel="noopener noreferrer">Edgar
+                                DB</a></li>
+                        <li><a href="https://Shodan.io" target="_blank" rel="noopener noreferrer">Shodan.io</a></li>
+                        <li><a href="https://viz.greynoise.io" target="_blank" rel="noopener noreferrer">Grey Noise</a>
+                        </li>
+                    </ul>
+                    <h3 id="emails-search">Emails search</h3>
+                    <ul>
+                        <li><a href="https://go.deleteme.com" target="_blank" rel="noopener noreferrer">DeleteMe</a>
+                        </li>
+                        <li><a href="https://haveibeenpawed.com" target="_blank" rel="noopener noreferrer">Have I been
+                                pawned</a></li>
+                        <li><a href="https://Hunter.io" target="_blank" rel="noopener noreferrer">Hunter.io</a></li>
+                        <li><a href="https://Netlas.io" target="_blank" rel="noopener noreferrer">Netlas.io</a></li>
+                        <li><a href="https://saymineapp.com/" target="_blank" rel="noopener noreferrer">SayMine</a></li>
+                    </ul>
+                    <h3 id="images">Images</h3>
+                    <ul>
+                        <li><a href="https://www.facecheck.id" target="_blank" rel="noopener noreferrer" target="_blank"
+                                rel="noopener noreferrer">Face check</a></li>
+                        <li><a href="https://pimeyes.com" target="_blank" rel="noopener noreferrer">PimEyes</a></li>
+                    </ul>
+                    <h3>Networks </h3>
+                    <li><a href="https://www.wigle.net/" target="_blank" rel="noopener noreferrer">Wigle</a></li>
+
+                    <h3 id="open-source-data">Open source data</h3>
+                    <ul>
+                        <li><a href="https://osintframework.com" target="_blank" rel="noopener noreferrer">OSINT
+                                Framework</a></li>
+                        <li><a href="https://www.facecheck.id" target="_blank" rel="noopener noreferrer">Facebook ID</a>
+                        </li>
+                        <li><a href="https://search.carrot2.org" target="_blank" rel="noopener noreferrer">Carrot2
+                                search</a> </li>
+                    </ul>
+
+
+                    <h3>URL scanner</h3>
+                    <ul>
+                        <li>
+                            <p><a href="https://cyscan.io"> target="_blank" rel="noopener noreferrer"Cyscan</a></p>
+                        </li>
+                    </ul>
+
+
+                    <h3 id="usernames-contacts">Usernames/ contacts </h3>
+                    <ul>
+                        <li><a href="https://peoplesearchnow.com" target="_blank" rel="noopener noreferrer">Peoples
+                                Search</a></li>
+                        <li><a href="https://usersearch.ai" target="_blank" rel="noopener noreferrer">User Serach</a>
+                        </li>
+                        <li><a href="https://whatsmyname.app" target="_blank" rel="noopener noreferrer">Whats My
+                                Name</a></li>
+                    </ul>
+                    <h3>Vulnerabilities </h3>
+                    <ul>
+                        <li><a href="https://Vulners.com" target="_blank" rel="noopener noreferrer">Vulners</a><br />
+                        </li>
+                        <li><a href="https://exploitdb.com" target="_blank" rel="noopener noreferrer">Google Hacking
+                                Database</a><br />
+                        </li>
+                        <li><a href="https://fullhunt.io" target="_blank" rel="noopener noreferrer">Fullhunt.io</a></li>
+                        <li><a href="https://cve.mitre.org" target="_blank" rel="noopener noreferrer">Mitres CVE</a>
+                        </li>
+                        <li><a href="https://cve.org" target="_blank" rel="noopener noreferrer">Common Vulnerabilities
+                                &amp; Exposure</a></li>
+                        <li><a href="https://owasp.org/" target="_blank" rel="noopener noreferrer">OWASP TOP 10</a></li>
+                        <li><a href="https://cwe.mitre.org" target="_blank" rel="noopener noreferrer">Common weakness
+                                Enumeration</a></li>
+                    </ul>
+                    <h3>Website monitoring</h3>
+                    <ul>
+                        <li><a href="https://httrack.com" target="_blank" rel="noopener noreferrer"></a>HTTrack</li>
+                        <li>Website copier</li>
+                        <li>NCollector studio</li>
+                    </ul>
+                    <hr />
+
+                    <!---------------------Social Enginneriing ------------------------------>
+                    <h1 id="social-engineering">2. Social engineering </h1>
+                    <p>Social engineering is the art of manipulation </p>
+                    <ul>
+                        <li>Impersonation </li>
+                        <li>Phishing - email, text</li>
+                        <li>Baiting  - lure using free gifts</li>
+                        <li>Tailgating - follow authorized person</li>
+                        <li>Quid pro quo - bribe</li>
+                        <li>Honeypot - fake online persona</li>
+                        <li>Dumpster diving - trash, dustbin </li>
+                        <li>Evil twin i.e fake wi-fi Acces point</li>
+                    </ul>
+                    <p>📌95% of Cybersecurity breaches are caused by human error.</p>
+                    <h3 id="tools-2">Tools</h3>
+                    <ol type="1">
+                        <li>Shellphish</li>
+                        <li>Blackeye</li>
+                        <li>Evilginx</li>
+                        <li>Dradis</li>
+                        <li>Basket</li>
+                    </ol>
+                    <h2 id="stages-of-social-engineering">Stages of social engineering</h2>
+                    <ol type="1">
+                        <li>Research Targets</li>
+                        <li>Select target</li>
+                        <li>Develop relationship</li>
+                        <li>Exploit relationship</li>
+                    </ol>
+                    <h2 id="phishing-propagation-methods">Phishing propagation methods</h2>
+                    <ul>
+                        <li>Pop up windows</li>
+                        <li>Spam mails</li>
+                        <li>Scareware</li>
+                        <li>Instant chats</li>
+                        <li>Malicious apk</li>
+                        <li>Repackaging Legitimate apks</li>
+                        <li>SMS phishing </li>
+                    </ul>
+                    <hr />
+
+
+                    <!------------------Enumneration--------------->
+                    <h2>3. Enumeration.</h2>
+                    <p>Enumeration involves actively gathering detailed information about a
+                        target system or network after initial reconnaissance has been
+                        conducted.</p>
+                    <h3>Purpose/goal of Enumeration</h3>
+                    <p>This includes identifying:
+                        <br> Usernames and passwords
+                        <br> Network shares
+                        <br> Services running on the system
+                        <br> Operating system details - Network
+                        resources and devices
+                    </p>
+
+                    <h3>Enumeration Tools</h3>
+                    <ul>
+                        <li>Nmap</li>
+                        <li>SNMP-check</li>
+                        <li>Metasploit(auxiliary)</li>
+                        <li>Netcat</li>
+                        <li>Enum4linux</li>
+                    </ul>
+                    <p>📌Knowing your enemy is winning half the war.</p>
+                    <h3>Techniques/methods</h3>
+                    <ul>
+                        <li>SNMP Enumeration</li>
+                        <li>NetBIOS Enumeration -user accounts and shared resources.</li>
+                        <li>Lightweight Directory Access Protocol(LDAP) directories
+                            Enumeration</li>
+                        <li>DNS Enumeration</li>
+                    </ul>
+                    <table style="width:83%;">
+                        <colgroup>
+                            <col style="width: 83%" />
+                        </colgroup>
+                        <tbody>
+                            <tr class="odd">
+                                <td style="text-align: left;">Sniffing(Capture Network Traffic).</td>
+                            </tr>
+                            <tr class="even">
+                                <td style="text-align: left;">Sniffing in reconnaissance is the process
+                                    of capturing and analyzing network traffic.</td>
+                            </tr>
+                            <tr class="odd">
+                                <td style="text-align: left;">Sniffing Tools</td>
+                            </tr>
+                            <tr class="even">
+                                <td style="text-align: left;">
+                                    Capsa network analyzer
+                                    - Face niff
+                                    - Omnipeek
+                                    - Sniffer wicsp
+                                    - Steel central packet analyzer</td>
+                            </tr>
+                            <tr class="odd">
+                                <td style="text-align: left;"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <!--------------------Data breaches ------------------------------>
+                    <p>Data breaches.</p>
+
+                    <p>There exists forums that post breached data and leaked information.</p>
+
+                    <ul>
+                        <li>Data breaches</li>
+                        <li>Personal information i.e Mail, Name, Phone numbers,
+                        <li>Identifications: ID, Passports, Credit card</li>
+                        <li>Device type detection i.e Mac, Linux, Windows, Android, iOS</li>
+                    </ul>
+                    <h3 id="leaked-information">Leaked information </h3>
+                    <ul>
+                        <li><a href="https://amiuniquei.org" target="_blank" rel="noopener noreferrer">AmIUnique</a>
+                        </li>
+                        <li><a href="https://cxsecurity.com/exploit/" target="_blank" rel="noopener noreferrer">CX
+                                security</a></li>
+                        <li><a href="https://databreaches.net" target="_blank" rel="noopener noreferrer">Data
+                                breaches</a></li>
+                        <li><a href="https://exploit-db.com" target="_blank" rel="noopener noreferrer">Google Hacking
+                                Database</a></li>
+                        <li><a href="https://intelx.io" target="_blank" rel="noopener noreferrer">Inteligence X</a></li>
+                        <li><a href="https://leak-lookup.com" target="_blank" rel="noopener noreferrer">Lookup</a></li>
+                        <li><a href="http://onyphe.io/" target="_blank" rel="noopener noreferrer">Onyphe</a></li>
+                        <li><a href="https://patchstack.com/database/" target="_blank" rel="noopener noreferrer">Patch
+                                Stack</a></li>
+                        <li>Telegram channels </li>
+                        <li><a href="https://vuldb.com/" target="_blank" rel="noopener noreferrer">Vuln DB</a></li>
+                    </ul>
+                    <hr />
+
+
+
+
+
+
+                    <!---------------Bottom Navigation -------------------------->
+                    <div class="book-navigation">
+                        <button class="prev-page" data-prev-page="../intro/">
+                            <img src="../assets/icons/previous_page.svg" alt="Previous" class="icon"> previous
+                        </button>
+                        <button class="top-page"
+                            onclick="document.getElementById('right-column').scrollTo({ top: 0, behavior: 'smooth' });">
+                            <img src="../assets/icons/back-to-top.svg" alt="Top" class="icon"> Top
+                        </button>
+                        <button class="next-page" data-next-page="../Scanning/">
+                            Next <img src="../assets/icons/next_page.svg" alt="Next" class="icon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        //Hide menu on clicking outside the left-column
+        const leftColumn = document.getElementById('left-column');
+        const rightColumn = document.getElementById('right-column');
+
+        function toggleMenu() {
+            leftColumn.classList.toggle('active');
+        }
+
+        rightColumn.addEventListener('click', () => {
+            // Only hide if screen is mobile size and menu is open
+            if (window.innerWidth <= 768 && leftColumn.classList.contains('active')) {
+                leftColumn.classList.remove('active');
+            }
+        });
+    </script>
+
+    <script>
+        const bookPage = document.getElementById("book-page");
+        const bookContent = document.getElementById("book-content");
+
+        function loadPage(targetPage, direction) {
+            const flipClass = direction === 'next' ? 'flip-forward' : 'flip-backward';
+
+            bookPage.classList.add(flipClass);
+
+            setTimeout(() => {
+                fetch(targetPage)
+                    .then(response => response.text())
+                    .then(data => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(data, 'text/html');
+                        const newContent = doc.getElementById("book-content").innerHTML;
+
+                        bookContent.innerHTML = newContent;
+                        bookPage.classList.remove(flipClass);
+                    });
+            }, 600); // wait for animation
+        }
+
+        document.querySelector(".next-page").addEventListener("click", function () {
+            loadPage(this.dataset.nextPage, 'next');
+        });
+
+        document.querySelector(".prev-page").addEventListener("click", function () {
+            loadPage(this.dataset.prevPage, 'prev');
+        });
+    </script>
+
+    <script>
+        function copyCode(btn) {
+            const code = btn.parentElement.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                btn.innerText = "Copied!";
+                setTimeout(() => btn.innerText = "Copy", 1500);
+            });
+        }
+    </script>
+
+    <script src="../assets/js/themes.js"></script>
+
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
