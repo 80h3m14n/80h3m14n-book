@@ -13,11 +13,51 @@
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: sans-serif;
+    }
 
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        vertical-align: top;
+    }
+
+    th {
+        background-color: #333;
+        color: #fff;
+        text-align: left;
+    }
+
+    a {
+        color: #007BFF;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+</style>
 <body>
-    <div class="container">
-
-        <!-- Theme Selector -->
+            <img src="../assets/icons/palette.svg" alt="Theme Switcher" id="theme-icon">
+            <label for="theme-selector" class="visually-hidden">Theme Selector</label>
+            <select id="theme-selector">
+                <option value="tomorrow" selected>Tomorrow Night Blue</option>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="slate">Slate</option>
+            </select>
         <div class="theme-switcher">
             <img src="../assets/icons/palette.svg" alt="Theme Switcher" id="theme-icon">
             <select id="theme-selector">
@@ -67,7 +107,9 @@
                     <p>Bug bounty hunting is the practice of finding and reporting security vulnerabilities
                         in software, websites, and applications in exchange for rewards
                         (bounties).</p>
-                    <h2 id="prerequisites">Prerequisites</h2>
+
+                        <p>What is the impact of the vulnerability found?</p>
+                    <h3 id="prerequisites">Prerequisites</h3>
                     <ul>
                         <li>Basic programming</li>
                         <li>Computer networking</li>
@@ -77,12 +119,31 @@
                         <li>Operating systems: Linux</li>
                         <li>Web Technologies</li>
                     </ul>
-                    <h2 id="platformsforums.">Bug Bounty Platforms/Forums.</h2>
-                    <p>These are platforms where you can report bugs.</p>
-
-                    <h3> 1. Open for signup </h3>
+                    <h3>Quick tips</h3>
                     <ul>
-                        <li><a href="https://bountysource.com" target="_blank" rel="noopener noreferrer">Bountysource
+                        <li>Bug bounty is a hobby, not a full time career.</li>
+                        <li>Understand the scope of the bug bounty program.</li>
+                        <li>Follow the responsible disclosure guidelines.</li>
+                        <li>Document your findings thoroughly.</li>
+                        <li>Be respectful and professional in your communications.</li>
+                        <li>Experience takes time, persistence is key to a successful bug bounty hunter.</li>
+                    </ul>
+
+                    <hr>
+
+                    <p>Usually, bug bounty hunting is a black-box process.</p>
+
+                    <hr>
+
+                    <!--- Bug Bounty Platforms/Forums --->
+                    <h1 id="platformsforums.">Bug Bounty Platforms/Forums.</h1>
+                    <p>Bug bounty platforms and forums are online communities where security researchers can find and report vulnerabilities in various applications and services.</p>
+
+
+                    <h2> 1. Open for signup </h2>
+                    <p>These are platforms where you can sign up for free as a researcher and report bugs.</p>
+                    <ul>
+                        <li><a href="https://bountysource.com" target="_blank" rel="noopener noreferrer">Bountysource</a>
                         </li>
                         <li><a href="https://bugbounty.jp" target="_blank" rel="noopener noreferrer">Bugbounty JP</a>
                         </li>
@@ -107,9 +168,11 @@
                         <li><a href="https://synack.com" target="_blank" rel="noopener noreferrer">Sysnack</a></li>
                         <li><a href="https://yeswehack.com" target="_blank" rel="noopener noreferrer">Yeswehack</a></li>
                     </ul>
-                    </p>
+                    
+                    <p>📌Note: Some of these platforms may require you to pass a test before you can start hunting.</p>
 
-                    <h3>2. Invite-based platforms</h3>
+
+                    <h2>2. Invite-based platforms</h2>
                     <ul>
                         <li><a href="https://antihack.me" target="_blank" rel="noopener noreferrer">Antihack</a></li>
                         <li><a href="https://bugbountyzone.com/" target="_blank" rel="noopener noreferrer">Bug bounty
@@ -123,10 +186,64 @@
                         <li><a href="https://zerocopter.com/" target="_blank" rel="noopener noreferrer">Zerocopter</a>
                         </li>
                     </ul>
+                    <p>📌Note: These platforms are invite-only, meaning you need to be invited by a member or the platform
+                        itself to join.</p>
+
+                    <h2>3. Private Bug Bounty Programs</h2>
+                    <p>These are programs that are not open to the public and require an invitation or approval to join.
+                        They are usually run by large organizations or companies.</p>
+                        <ul>
+                            <li><a href="https://bugbounty.meta.com" target="_blank" rel="noopener noreferrer">Meta</a></li>
+                            <li><a href="https://www.google.com/about/appsecurity/reward-program/" target="_blank" rel="noopener noreferrer">Google</a></li>
+                            <li><a href="https://www.microsoft.com/en-us/msrc/bounty" target="_blank" rel="noopener noreferrer">Microsoft</a></li>
+                            <li><a href="https://www.apple.com/support/security/" target="_blank" rel="noopener noreferrer">Apple</a></li>
+                            <li><a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=G2Z3K5Q6X4F7Y8Z3"
+                                    target="_blank" rel="noopener noreferrer">Amazon</a></li>
+                            <li><a href="https://www.oracle.com/security-alerts/" target="_blank"
+                                    rel="noopener noreferrer">Oracle</a></li>
+                            <li><a href="https://www.ibm.com/security/bug-bounty" target="_blank"
+                                    rel="noopener noreferrer">IBM</a></li>
+                            <li><a href="https://www.salesforce.com/company/security/bounty-program/"
+                                    target="_blank" rel="noopener noreferrer">Salesforce</a></li>
+                            <li><a href="https://www.paypal.com/us/webapps/mpp/security-bug-bounty"
+                                    target="_blank" rel="noopener noreferrer">PayPal</a></li>
+                            <li><a href="https://www.intel.com/content/www/us/en/security-center/bug-bounty.html"
+                                    target="_blank" rel="noopener noreferrer">Intel</a></li>
+                            <li><a href="https://www.adobe.com/security/bug-bounty.html" target="_blank"
+                                    rel="noopener noreferrer">Adobe</a></li>
+                            <li><a href="https://www.spotify.com/us/about/security/" target="_blank"
+                                    rel="noopener noreferrer">Spotify</a></li>
+                            <li><a href="https://www.tesla.com/support/bug-bounty-program" target="_blank"
+                                    rel="noopener noreferrer">Tesla</a></li>
+                            <li><a href="https://www.cloudflare.com/bug-bounty/" target="_blank"
+                                    rel="noopener noreferrer">Cloudflare</a></li>
+                            <li><a href="https://www.uber.com/us/en/security/bug-bounty/" target="_blank"
+                                    rel="noopener noreferrer">Uber</a></li>
+                            <li><a href="https://www.netflix.com/security" target="_blank"
+                                    rel="noopener noreferrer">Netflix</a></li>
+                            <li><a href="https://www.dropbox.com/security" target="_blank"
+                                    rel="noopener noreferrer">Dropbox</a></li>
+                            <li><a href="https://www.airbnb.com/security" target="_blank"
+                                    rel="noopener noreferrer">Airbnb</a></li>   
+                        </ul>
                     <hr />
+                    <h2>Blockchain Based Bug Bounties</h2>
+                    <p>These are bug bounty programs that are based on blockchain technology.</p>
+                    <ul>
+                        <li><a href="https://audits.sherlock.xyz/bug-bounties" target="_blank" rel="noopener noreferrer">Sherlock</a></li>
+                        <li><a href="https://www.hackenproof.com/" target="_blank" rel="noopener noreferrer">Hackenproof</a></li>
+                        <li><a href="https://immunefi.com/" target="_blank" rel="noopener noreferrer">Immunefi</a></li>
+                        <li><a href="https://www.bugcrowd.com/blockchain-bug-bounty-programs/" target="_blank" rel="noopener noreferrer">Bug Crowd Blockchain Programs</a></li>
+                        <li><a href="https://www.blockchain.com/bounty" target="_blank" rel="noopener noreferrer">Blockchain.com Bounty</a></li>
+                        <li><a href="https://www.kyber.network/bounty" target="_blank" rel="noopener noreferrer">Kyber Network Bounty</a></li>
+                        <li><a href="https://www.cryptokitties.co/bounty" target="_blank" rel="noopener noreferrer">CryptoKitties Bounty</a></li>
+                        <li><a href="https://www.augur.net/bounty" target="_blank" rel="noopener noreferrer">Augur Bounty</a></li>
+                        <li><a href="https://www.0x.org/bounty" target="_blank" rel="noopener noreferrer">0x Bounty</a></li>   
+                    </ul>
+                    <hr /> 
 
 
-                    <h3>Vulnerability Disclosure Programs(VDP)</h3>
+                    <h2>Vulnerability Disclosure Programs(VDP)</h2>
                     <p>A VDP is a structured framework that allows organizations to receive, manage, and address
                         security vulnerabilities
                         reported by external parties, including security researchers and ethical hackers</p>
@@ -146,7 +263,7 @@
                     <!-------------Phases of Bug Bounty Hunting ------------->
                     <h1>Phases of Bug Bounty Hunting.</h1>
                     <ol type="1">
-                        <li>SOW &amp; MSA signed</li>
+                        <li>Statement of Work (SOW) &amp; Master Service Agreement (MSA) signed</li>
                     </ol>
                     <p><br></p>
                     <ol start="2" type="1">
@@ -163,11 +280,11 @@
                     </ul>
                     <p><br></p>
                     <ol start="3" type="1">
-                        <li>Scope verified</li>
+                        <li>Scope verification</li>
                     </ol>
                     <ul>
                         <li>Allowed range of assets</li>
-                        <li>Legal &amp; ethical boundaries</li>
+                        <li>Legal and Ethical boundaries</li>
                         <li>Practical reasons</li>
                         <li>Fairness</li>
                     </ul>
@@ -196,45 +313,6 @@
                         <li>Retesting(If necessary)</li>
                     </ol>
                     <hr />
-
-                    <!------------Penetration Testing Lab Set-up ---------------->
-                    <h2>Penetration testing lab set-up.</h2>
-                    <p>📌Master the methodology not the tool, Tools are invented &amp; overtime they get deprecated,</p>
-                    <h3>Essential Tools.</h3>
-                    <ul>
-                        <li>Virtual Machine</li>
-                        <li>Ubuntu OS</li>
-                        <li>Web server</li>
-                        <li>VPS provider</li>
-                        <li>Docker</li>
-                        <li>Burp suite framework</li>
-                        <li>SQL map</li>
-                        <li>BeEF</li>
-                    </ul>
-
-                    <h3>Exploitation &amp; Post-Exploitation</h3>
-                    <ul>
-                        <li>patator Brute-force attack tool</li>
-                        <li>wfuzz Web application fuzzing</li>
-                        <li>FFUF</li>
-                        <li>changeme Default credential scanner</li>
-                        <li>PHPGGC PHP gadget chain exploitation</li>
-                    </ul>
-                    <h3>SSRF, LFI, XXE &amp; JWT Attacks</h3>
-                    <ul>
-                        <li>LFISuit LFI (Local File Inclusion) scanner</li>
-                        <li>ssrfDetector Detects SSRF vulnerabilities</li>
-                        <li>XXE Injector XXE (XML External Entity) attack tool</li>
-                        <li>oxml_xxe Detects XXE vulnerabilities in XML files</li>
-                    </ul>
-                    <h3>Automated Pentesting Frameworks</h3>
-                    <ul>
-                        <li>Sn1per</li>
-                        <li>Sandcastle</li>
-                    </ul>
-                    <hr />
-
-
 
                     <!--------------Known Exploited Vulnerabilities---------------->
                     <h1>Known Exploited Vulnerabilities.</h1>
@@ -270,7 +348,7 @@
                         <li>API</li>
                         <li>Authentication errors</li>
                         <li>Handler errors</li>
-                        <li>Permission issues </li>
+                        <li>Permission issues</li>
                     </ul>
                     <ol start="2" type="1">
                         <li>Hardware design</li>
@@ -300,13 +378,320 @@
                     </ul>
 
                     <h3>MITRE ATT&amp;CK CVE</h3>
+
+                    <p><a href="- https://attack.mitre.org" target="_blank">Mitre</a></p>
+                    <p>Adversarial Tactics,Techniques and Common Knowledge ATT&CK matrix.</p>
                     <p>CTID - The Center for threat informed defense is a non profit funded
                         research and development organization operated by MITRE Engenuity</p>
                     <p>TTPs - Tactics, Techniques and Procedures.</p>
                     <hr />
 
+                    <h3>CAPEC Attacks</h3>
+                    <p><a href="- https://capec.mitre.org" target="_blank">CAPEC Mitre</a></p>
+                    <p>Common Attack Pattern Enumeration and Classification (CAPEC)</p>
 
-                    <!------------------Useful Resources ---------------------->
+
+                    <!------------------Bug Bounty Hunting Methodology ---------------------->
+
+
+                    
+                    <h2>Information Gathering Phase</h2>
+                    <p>The first step to attacking any target is gathering information about the target.</p>
+                    <p>📘 The more exposed assets belonging to the company the most probable  to discover something vulnerable.</p>
+                    <p>Crafting a custom information-gathering script can significantly boost your bug bounty hunting workflow.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Tools / Resources</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Open Source Intel</td>
+        <td>
+          <a href="https://osintframework.com">OSINT Framework</a><br>
+          datasploit<br>
+          <a href="https://www.exploit-db.com/">Exploit-DB</a><br>
+          <a href="https://pastebin.com/">Pastebin</a><br>
+          <a href="https://web.archive.org/">Wayback Machine</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Certificate Check</td>
+        <td>
+          <a href="https://crt.sh">crt.sh</a><br>
+          <a href="https://censys.io">Censys</a><br>
+          Cert Spotter
+        </td>
+      </tr>
+      <tr>
+        <td>Acquisitions</td>
+        <td><a href="https://crunchbase.com">Crunchbase</a></td>
+      </tr>
+      <tr>
+        <td>Web Spidering / Crawling</td>
+        <td>
+          <a href="https://shodan.io">Shodan</a><br>
+          SpiderFoot<br>
+          theHarvester<br>
+          Recon-ng
+        </td>
+      </tr>
+      <tr>
+        <td>RDAP (Registry Data)</td>
+        <td>
+          <a href="https://whois.kenic.or.ke">Kenic Whois</a><br>
+          <a href="https://arin.net/resources/registry/whois/rdap">ARIN RDAP</a>
+        </td>
+      </tr>
+      <tr>
+        <td>S3 Buckets</td>
+        <td>
+          <a href="https://buckets.grayhatwarfare.com/">Grayhat Buckets</a><br>
+          <a href="https://github.com/nahamsec/lazys3/">LazyS3</a><br>
+          <a href="https://github.com/eth0izzle/bucket-stream/">Bucket Stream</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Technology Check / Ads & Analytics</td>
+        <td>
+          <a href="https://builtwith.com">BuiltWith</a><br>
+          <a href="https://publicwww.com">PublicWWW</a><br>
+          <a href="https://stackshare.io/">StackShare</a><br>
+          <a href="https://sitereport.netcraft.com/">Netcraft</a><br>
+          <a href="https://www.wappalyzer.com">Wappalyzer</a><br>
+          whatweb
+        </td>
+      </tr>
+      <tr>
+        <td>Subdomain Enumeration</td>
+        <td>
+          Amass<br>
+          <a href="https://chaos.projectdiscovery.io/#/">ProjectDiscovery Chaos</a><br>
+          httprobe<br>
+          MassDNS<br>
+          Subfinder<br>
+          Sublist3r<br>
+          <a href="https://shodan.io">Shodan</a><br>
+          <a href="https://securitytrails.com">SecurityTrails</a><br>
+          theHarvester
+        </td>
+      </tr>
+      <tr>
+        <td>Subdomain Scraping</td>
+        <td>
+          Google Dorks<br>
+          Amass<br>
+          Subfinder<br>
+          Shosubgo
+        </td>
+      </tr>
+      <tr>
+        <td>Subdomain Bruteforcing</td>
+        <td>
+          Dirsearch<br>
+          Gobuster<br>
+          massDNS<br>
+          shuffle DNS<br>
+          <a href="https://assetnote.io">Assetnote</a><br>
+          altDNS<br>
+          puredns<br>
+          DirBuster<br>
+          bfac
+        </td>
+      </tr>
+      <tr>
+        <td>Linked & JS Discovery</td>
+        <td>
+          Burp Suite Pro<br>
+          Gospider<br>
+          hakrawler<br>
+          subdomainizer<br>
+          <a href="https://retirejs.github.io/retire.js/">Retire.js</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Service Enumeration</td>
+        <td>
+          Masscan<br>
+          Nmap<br>
+          Shodan
+        </td>
+      </tr>
+      <tr>
+        <td>Directory & File Enumeration</td>
+        <td>
+          Gobuster<br>
+          Feroxbuster<br>
+          Dirb<br>
+          Dirsearch
+        </td>
+      </tr>
+      <tr>
+        <td>ASN Enumeration</td>
+        <td>
+          Metabigor<br>
+          <a href="https://asnlookup.com">ASNLookup</a><br>
+          <a href="https://bgp.he.net">Hurricane Electric</a><br>
+          <a href="https://afrinic.net">AFRINIC</a><br>
+          <a href="https://arin.net">ARIN</a><br>
+          <a href="https://apnic.net">APNIC</a><br>
+          <a href="https://lacnic.net">LACNIC</a><br>
+          <a href="https://ripe.net">RIPE</a><br>
+          bbot<br>
+          <code>$bbot -t example.com -f subdomain-enum</code>
+        </td>
+      </tr>
+      <tr>
+        <td>DNS Enumeration</td>
+        <td>
+          Direct DNS<br>
+          Reverse DNS<br>
+          IP Addresses<br>
+          <a href="https://dnsdumpster.com/">DNSDumpster</a><br>
+          dnsrecon<br>
+          nslookup<br>
+          netdiscover
+        </td>
+      </tr>
+      <tr>
+        <td>Reverse WHOIS Lookup</td>
+        <td>
+          Registrant / Domain Owner<br>
+          <a href="https://reversewhois.io">ReverseWhois.io</a><br>
+          <a href="https://viewdns.info/reversewhois/">ViewDNS</a><br>
+          <a href="https://whoxy.com">Whoxy</a><br>
+          DOMLink (requires Whoxy API)
+        </td>
+      </tr>
+      <tr>
+        <td>Security Headers</td>
+        <td>
+          <a href="https://securityheaders.com">SecurityHeaders</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+  <h2>Vulnerability Discovery Phase</h2>
+
+  <p>Once you have identified vulnerabilities, try to exploit them using tools like Metasploit to understand their impact. </p>
+
+
+  <h3>Exploit Automation</h3>
+    <p>Automating the exploitation of vulnerabilities can save time and effort. Tools like Metasploit can help automate the exploitation process.</p>
+
+    <h4>Limitations of Automation</h4>
+    <p>While automation can be helpful, it's important to understand its limitations. Automated tools may not always find all vulnerabilities, and they can sometimes produce false positives. Manual testing and verification are still essential components of a thorough security assessment.</p>
+    <ul>
+        <li>Limitations of automation</li>
+        <ul>
+            <li>Blocked by some preventive measures like rate limiting.</li>
+            <li>False positive results</li>
+            <li>Some vulnerabilities are hard to implement on automation tools i.e business logic flaws</li>
+        </ul>
+    </ul>
+
+    <h3>Automation techniques</h3>
+    <ul>
+        <li>Using custom scripts to automate repetitive tasks</li>
+        <li>Fuzzing</li>
+        <li>Leveraging APIs for data collection and analysis</li>
+        <li>Integrating tools like Burp Suite, Nmap, and Metasploit into your workflow</li>
+    </ul>
+
+    <h4>Fuzzing</h4>
+    <p>Fuzzing is a technique used to discover vulnerabilities by sending random or unexpected inputs to a target application. It can help identify issues like buffer overflows, input validation errors, and more.</p>
+
+    Types of Fuzzing:
+    <ul>
+        <li>Mutation-based fuzzing</li>
+        <li>Generation-based fuzzing</li>
+        <li>Protocol fuzzing</li>
+        <li>File format fuzzing</li>
+    <p>Fuzzing tools can automate the process of sending various inputs to an application, allowing you to quickly identify potential vulnerabilities.</p>
+    <ul>
+        <li>Fuzzing tools</li>
+        <ul>
+            <li>Burp Suite Intruder</li>
+            <li>OWASP ZAP Fuzzer</li>
+            <li>Peach Fuzzer</li>
+            <li>AFL (American Fuzzy Lop)</li>
+            <li><a href="https://github.com/ffuf/ffuf" target="_blank" rel="noopener">FFUF</a></li>
+            
+        </ul>
+
+        <h3>API Testing</h3>
+        <p>API testing is a type of software testing that focuses on verifying and validating APIs (Application Programming Interfaces) to ensure they function as intended. It involves testing the endpoints, request/response formats, authentication, and overall behavior of the API.</p>
+
+        <p>API testing is crucial for ensuring the security and reliability of applications that rely on APIs for communication and data exchange.</p>
+        <p>API testing tools can help automate the process of sending requests, validating responses, and identifying vulnerabilities in APIs.</p>
+        <ul>
+            <li>API testing tools</li>
+            <ul>
+                <li><a href="https://www.postman.com/" target="_blank" rel="noopener">Postman</a></li>
+                <li><a href="https://insomnia.rest/" target="_blank" rel="noopener">Insomnia</a></li>
+                <li><a href="https://www.portswigger.net/burp" target="_blank" rel="noopener">Burp Suite Pro</a></li>
+                <li><a href="https://www.zaproxy.org/" target="_blank" rel="noopener">OWASP ZAP</a></li>
+                <li><a href="https://www.soapui.org/" target="_blank" rel="noopener">SoapUI</a></li>
+                <li><a href="https://rest-assured.io/" target="_blank" rel="noopener">RestAssured</a></li>
+                <li><a href="https://github.com/streaak/keyhacks" target="_blank" rel="noopener">Keyhacks</a></li>
+            </ul>
+
+            <h4>Types of API Testing</h4>
+            <ul>
+                <li>REST API</li>
+                <li>GraphQL API</li>
+                <li>SOAP API</li>
+                <li>Batch API</li>
+            </ul>
+
+
+<h1>Web Application Testing</h1>
+<p>Start with commonly Known Vulnerabilities as OWASP Top 10</p>
+
+<h2>Input Validation ulnerabilities</h2>
+<p>Input validation vulnerabilities occur when an application does not properly validate or sanitize user input, allowing attackers to inject malicious data.</p>
+<p>Common input validation vulnerabilities include:</p>
+<ul>
+    <li>SQL Injection</li>
+    <li>Cross-Site Scripting (XSS)</li>
+    <li>Command Injection</li>
+    <li>XML External Entity (XXE) Injection</li>
+    <li>Path Traversal</li>
+    <li>Remote Code Execution (RCE)</li>
+</ul>
+
+<h3>SQL Injection</h3>
+<p>SQL Injection vulnerabilities occur when an application allows untrusted data to be included in SQL queries without proper validation or escaping. This can allow attackers to manipulate the database, exfiltrate data, or execute arbitrary commands.</p>
+
+
+
+
+
+<h2>Access Control Vulnerabilities</h2>
+<p>Access control vulnerabilities occur when an application does not properly enforce permissions and restrictions on user actions, allowing unauthorized access to sensitive data or functionality.</p>
+<p>Common access control vulnerabilities include:</p>
+<ul>
+    <li>Insecure Direct Object References (IDOR)</li>
+    <li>Missing Function Level Access Control</li>
+    <li>Excessive Data Exposure</li>
+    <li>Broken Authentication</li>
+</ul>
+
+<h2>Authentication and Authorization Vulnerabilities</h2>
+
+<h2>Session Management Vulnerabilities</h2>
+
+<h2>Business Logic Vulnerabilities</h2>
+
+<h2></h2>
+
+<hr>
+    <!------------------Useful Resources ---------------------->
                     <h1>External Resources</h1>
                     <h3>Books &amp; Journals</h3>
                     <ul>
